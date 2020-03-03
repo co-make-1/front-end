@@ -2,6 +2,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 export const FETCH_DATA = "FETCH_DATA";
 export const UPDATE_ISSUE = "UPDATE_ISSUE";
+export const POST_DATA = "POST_DATA";
 
 export const getData = () => dispatch => {
     dispatch({ type: FETCH_DATA });
@@ -16,13 +17,15 @@ export const getData = () => dispatch => {
         })
 }
 
-export const postData = () => dispatch => (
+export const postData = value => dispatch => {
+    dispatch({ type: POST_DATA, payload: value })
     axiosWithAuth()
         .post()
         .then(res => {
             console.log(".post", res)
+            dispatch({ type: UPDATE_ISSUE, payload: res.data })
         })
         .catch(err => {
             console.log("Error with .post", err)
         })
-)
+}
