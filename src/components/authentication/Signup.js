@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { withFormik, Field } from "formik";
+import { withFormik, Field, Form } from "formik";
 import * as Yup from "yup";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Button, Form as Form1, FormGroup, Label, Input } from 'reactstrap';
 
 const Signup = ({ values, errors, touched}) => {
   return (
-    <Form>
+    <Form1>
       <Row form>
         <Col md={6}>
           <FormGroup>
@@ -52,9 +52,16 @@ const Signup = ({ values, errors, touched}) => {
         <Input type="checkbox" name="check" id="exampleCheck"/>
         <Label for="exampleCheck" check>Check me out</Label>
       </FormGroup>
-      <Button>Sign in</Button>
-    </Form>
+      <Button>Sign up</Button>
+    </Form1>
   );
-}
+};
+
+const FormikSignUp = withFormik({mapPropsToValues(props){
+    return {
+
+    }
+}})(Signup)
+
 
 export default Signup;

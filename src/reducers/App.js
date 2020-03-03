@@ -1,10 +1,10 @@
 import React from 'react';
-import { Route, Link, Redirect } from "react-router-dom"
-import './App.css';
+import { Route, Link, Redirect } from "react-router-dom";
+import '../App.css';
 
 // Components
-import Login from "./components/authentication/Login"
-import Signup from "./components/authentication/Signup"
+import Login from "../components/authentication/Login";
+import Signup from "../components/authentication/Signup";
 
 function App() {
   return (
