@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Link, Redirect } from "react-router-dom"
 import './App.css';
-import {Route} from "react-router-dom";
-import Login from "./components/authentication/Login";
+import Nav from './components/authentication/Nav';
 
 // Components
 import Login from "./components/authentication/Login"
@@ -12,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <h1> Test Render </h1>
-      {/* Nav bar goes here */}
-      {/* <Route exact path="/" component={Login} />
+      <Nav/>
+      <Route exact path="/" component={Login} />
       <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} /> */}
+      <Route path="/signup" component={Signup} />
       {/* Private Routes go here */}
     </div>
   );

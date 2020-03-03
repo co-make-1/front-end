@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Message } from 'semantic-ui-react';
-// import {axiosWithAuth} from "../utils/axiosWithAuth";
+import {axiosWithAuth} from "../../utils/axiosWithAuth";
 
     const Login = props => {
         const [login, setLogin] = useState({username: "", password: ""})
@@ -65,7 +65,7 @@ import { Form, Message } from 'semantic-ui-react';
                     <div className="card-footer">
                         <div className="d-flex justify-content-center links">
                         <Message>
-                            Don't have an account? <Link to='/register'>Register Now</Link>
+                            Don't have an account? <Link to='/signup'>Signup Now</Link>
                         </Message>
                         </div>
 			        </div>
