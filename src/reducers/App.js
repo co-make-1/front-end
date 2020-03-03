@@ -9,7 +9,6 @@ import Signup from "../components/authentication/Signup";
 function App() {
   return (
     <div className="App">
-      <h1> Test Render </h1>
       {/* Nav bar goes here */}
       {/* <Route exact path="/" component={Login} />
       <Route path="/login" component={Login} /> */}

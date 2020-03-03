@@ -3,11 +3,19 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./signup.css";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import Hero from "./img/hero.jpg";
 
 
 const Signup = ({ values, errors, touched }) => {
+
     
     return (
+<div className="page_container">
+    <h1>Join the Team!</h1> 
+    <div className="img_holder">
+        <img src={Hero}/>
+    </div>    
         <div className="form_container">
             <Form className="form">
                 <label htmlFor="fname" /> First Name: {" "}
@@ -15,6 +23,7 @@ const Signup = ({ values, errors, touched }) => {
                 id="fname"
                 type="text"
                 name="fname"
+                placeholder="Enter first name here"
                 />
                 {touched.fname && errors.fname && (<p>{errors.fname}</p>)}
 
@@ -23,6 +32,7 @@ const Signup = ({ values, errors, touched }) => {
                 id="lname"
                 type="text"
                 name="lname"
+                placeholder="Enter last name here"
                 />
                 {touched.lname && errors.lname && (<p>{errors.lname}</p>)}
 
@@ -31,6 +41,7 @@ const Signup = ({ values, errors, touched }) => {
                 id="email"
                 type="email"
                 name="email"
+                placeholder="Enter email here"
                 />
                 {touched.email && errors.email && (<p>{errors.email}</p>)}
 
@@ -39,14 +50,15 @@ const Signup = ({ values, errors, touched }) => {
                 id="password"
                 type="password"
                 name="password"
+                placeholder="Enter password here"
                 />
                 {touched.password && errors.password && (<p>{errors.password}</p>)}  
 
-                <Button className="submit_button" color="primary">Join the team!</Button>{' '}
-                <small>Already have an account? Sign in here</small>
-            </Form>
-            
+                <Button type="submit" className="submit_button" color="primary">Join the team!</Button>{' '}
+                <small>Already have an account? <Link to="./login">Sign in here</Link></small>
+            </Form>   
         </div>
+    </div>
     )
 }
 
@@ -68,6 +80,7 @@ const FormikSignup = withFormik({
 
     handleSubmit (values, {resetForm}) {
         resetForm()
+        console.log(values)
     }
 
 
