@@ -43,7 +43,9 @@ const Signup = ({ values, errors, touched }) => {
                 {touched.password && errors.password && (<p>{errors.password}</p>)}  
 
                 <Button className="submit_button" color="primary">Join the team!</Button>{' '}
+                <small>Already have an account? Sign in here</small>
             </Form>
+            
         </div>
     )
 }
@@ -68,7 +70,7 @@ const FormikSignup = withFormik({
         resetForm()
     }
 
-    
+
 })(Signup);
 
 export default FormikSignup;

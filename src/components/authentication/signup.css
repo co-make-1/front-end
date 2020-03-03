@@ -33,3 +33,7 @@ input {
 p{
     color: red;
 }
+
+small {
+    margin-top: 15px;
+}
