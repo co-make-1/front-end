@@ -2,7 +2,7 @@ const userState = {
     id: "",
     name: "",
     email: "",
-    bio: "",
+    bio: ""
     // votes: ""
 }
 

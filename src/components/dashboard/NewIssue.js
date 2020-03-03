@@ -1,19 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
+import { connect } from "react-redux"
 
-const NewIssue = () => {
+import { postData } from "../../actions"
+
+const NewIssue = props => {
 
     // const handleChange = event => {
 
     // }
 
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-    // }
+    const handleSubmit = event => {
+        event.preventDefault();
+        props.postData({ title: title, description: description })
+    }
 
     return (
         <form
             className="new-issue-form"
-        // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
         >
             <label
                 htmlFor="title"
@@ -22,7 +26,7 @@ const NewIssue = () => {
                 id="title"
                 name="title"
                 type="text"
-            // value={}
+                value={props.title}
             // onChange={handleChange}
             />
             <label
@@ -32,7 +36,7 @@ const NewIssue = () => {
                 id="description"
                 name="description"
                 type="text"
-            // value={}
+                value={props.description}
             // onChange={handleChange}
             />
             <button>Create</button>
@@ -40,4 +44,10 @@ const NewIssue = () => {
     )
 }
 
-export default NewIssue;
+const mapStateToProps = state => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, { postData })(NewIssue);

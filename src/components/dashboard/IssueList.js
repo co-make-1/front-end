@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from "react-redux";
 
 import Issue from "./Issue"
 
@@ -11,4 +12,10 @@ const IssueList = () => {
     )
 }
 
-export default IssueList;
+// const mapStateToProps = state => {
+//     return {
+
+//     }
+// }
+
+export default connect(mapStateToProps, {})(IssueList);
