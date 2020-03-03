@@ -12,8 +12,8 @@ function App() {
       <h1> Test Render </h1>
       {/* Nav bar goes here */}
       {/* <Route exact path="/" component={Login} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} /> */}
+      <Route path="/login" component={Login} /> */}
+      <Route path="/signup" component={Signup} /> 
       {/* Private Routes go here */}
     </div>
   );
