@@ -59,10 +59,16 @@ const FormikSignup = withFormik({
 
 
     validationSchema: Yup.object().shape({
-        email: Yup.string().email("Please a valid email").required("Email required"),
+        email: Yup.string().email("Please enter a valid email").required("Email required"),
         fname: Yup.string().required("Please enter your first name"),
         password: Yup.string().max(12, "The maximum amount of characters allowed is 12").min(8,"Minimum characters allowed is 8"),
-    })
+    }),
+
+    handleSubmit (values, {resetForm}) {
+        resetForm()
+    }
+
+    
 })(Signup);
 
 export default FormikSignup;
