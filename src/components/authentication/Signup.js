@@ -2,12 +2,12 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./signup.css";
+import { Button } from "reactstrap";
 
 
 const Signup = ({ values, errors, touched }) => {
     
     return (
-        
         <div className="form_container">
             <Form className="form">
                 <label htmlFor="fname" /> First Name: {" "}
@@ -40,7 +40,9 @@ const Signup = ({ values, errors, touched }) => {
                 type="password"
                 name="password"
                 />
-                {touched.password && errors.password && (<p>{errors.password}</p>)}
+                {touched.password && errors.password && (<p>{errors.password}</p>)}  
+
+                <Button className="submit_button" color="primary">Join the team!</Button>{' '}
             </Form>
         </div>
     )
