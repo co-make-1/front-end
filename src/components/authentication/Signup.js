@@ -12,12 +12,10 @@ const Signup = ({ values, errors, touched }) => {
     
     return (
 <div className="page_container">
-    <h1>Join the Team!</h1> 
-    <div className="img_holder">
-        <img src={Hero}/>
-    </div>    
+    <h1><span>Join the Team!</span></h1>  
         <div className="form_container">
-            <Form className="form">
+           <Form className="form">
+                <h2>Sign up here! </h2>
                 <label htmlFor="fname" /> First Name: {" "}
                 <Field 
                 id="fname"
@@ -54,6 +52,13 @@ const Signup = ({ values, errors, touched }) => {
                 />
                 {touched.password && errors.password && (<p>{errors.password}</p>)}  
 
+                <label htmlFor="birthday"/> Birthday: {" "}
+                <Field
+                id="birthday"
+                name="birthday"
+                type="date"
+                />
+
                 <Button type="submit" className="submit_button" color="primary">Join the team!</Button>{' '}
                 <small>Already have an account? <Link to="./login">Sign in here</Link></small>
             </Form>   
@@ -73,9 +78,9 @@ const FormikSignup = withFormik({
 
 
     validationSchema: Yup.object().shape({
-        email: Yup.string().email("Please enter a valid email").required("Email required"),
+        email: Yup.string().email("Please enter a valid email").required("Please enter your email"),
         fname: Yup.string().required("Please enter your first name"),
-        password: Yup.string().max(12, "The maximum amount of characters allowed is 12").min(8,"Minimum characters allowed is 8"),
+        password: Yup.string().max(12, "The maximum amount of characters allowed is 12").min(8,"Minimum characters allowed is 8").required(),
     }),
 
     handleSubmit (values, {resetForm}) {
