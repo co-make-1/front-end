@@ -1,7 +1,7 @@
 import { FETCH_DATA, UPDATE_ISSUE } from "../actions"
 
 const issueState = {
-    id: "",
+    id: 5,
     title: "",
     description: ""
 }
