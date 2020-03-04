@@ -52,6 +52,11 @@ p{
     color: #4682B4;
 }
 
+#head:hover{
+    color: red;
+    text-decoration: none;
+}
+
 small {
     margin-top: 15px;
 }
