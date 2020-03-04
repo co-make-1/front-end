@@ -18,4 +18,4 @@ const IssueList = () => {
 //     }
 // }
 
-export default connect(mapStateToProps, {})(IssueList);
+export default IssueList;
