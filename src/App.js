@@ -12,16 +12,12 @@ import Dashboard from "./components/dashboard/Dashboard"
 function App() {
   return (
     <div className="App">
-
-      <h1> Test Render </h1>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        {/* Private Routes go here */}
-        <Route path="/dashboard" component={Dashboard} />
-      </Switch>
+      {/* <h1> Test Render </h1> */}
+      <Nav/>
+      <Route exact path="/" component={Login} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+      {/* Private Routes go here */}
     </div>
   );
 }
