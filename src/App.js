@@ -10,7 +10,7 @@ import Signup from "./components/authentication/Signup"
 function App() {
   return (
     <div className="App">
-      <h1> Test Render </h1>
+      {/* <h1> Test Render </h1> */}
       <Nav/>
       <Route exact path="/" component={Login} />
       <Route path="/login" component={Login} />
