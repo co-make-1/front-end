@@ -1,0 +1,67 @@
+.form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border:black solid 3px;
+    background-color: lightgrey;
+    padding: 20px;
+    box-shadow: 5px 10px 15px black ;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    margin-top: 17px;
+};
+
+
+
+
+.form1_container #parent_cont {
+display: flex;
+width: 100%;
+justify-content: center;
+}
+
+#parent_cont{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.signup_input {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+
+.submit_button{
+    margin-top: 30px;
+}
+
+
+p{
+    color: red;
+}
+
+small {
+    margin-top: 15px;
+}
+
+.page_container{
+    background-color: lightsalmon;
+}
+
+.h1{
+    background-color: white;
+
+}
+
+span:hover {
+    color:lightsalmon;
+}
+
+#h2 {
+        font-size: 30px;
+        padding: 5px;
+}

@@ -5,16 +5,16 @@ import Nav from './components/authentication/Nav';
 
 // Components
 import Login from "./components/authentication/Login"
-import Signup from "./components/authentication/Signup"
+import FormikSignup from "./components/authentication/Signup"
 
 function App() {
   return (
     <div className="App">
-      <h1> Test Render </h1>
+     {/* <h1> Test Render </h1> */}
       <Nav/>
       <Route exact path="/" component={Login} />
       <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+      <Route exact path="/signup" component={FormikSignup} />
       {/* Private Routes go here */}
     </div>
   );
