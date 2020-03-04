@@ -1,10 +1,10 @@
 import { FETCH_DATA, UPDATE_ISSUE } from "../actions"
 
-const issueState = {
+const issueState = [{
     id: 5,
     title: "Potholes on my Road",
     description: "I have to rent a boat to drive down my street!"
-}
+}]
 
 const issueReducer = (state = issueState, action) => {
     switch (action.type) {

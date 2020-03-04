@@ -1,10 +1,11 @@
 import React from "react"
 
-const Issue = () => {
+const Issue = props => {
+    console.log("Issue", props)
     return (
         <div>
-            <h3>Issue:</h3>
-            <p>Something's wrong in the neighborhood</p>
+            <h3>{props.item.title}</h3>
+            <p>{props.item.description}</p>
         </div>
     )
 }
