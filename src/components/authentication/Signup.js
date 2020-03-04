@@ -11,10 +11,11 @@ const Signup = ({ values, errors, touched }) => {
     
     return (
 <div className="page_container">
-    <h1 className="h1"><span><Link to="/">Join the Team!</Link></span></h1>  
+    <h1 className="h1"><span></span></h1>  
         <div id="parent_cont" className="form1_container">
            <Form className="form">
-                <h2 id="h2" >Sign up here! </h2>
+                <h2> <Link id="head" to="/">Join the Team!</Link></h2>
+
                 <label htmlFor="fname" /> First Name: {" "}
                 <Field 
                 className="signup_input"
@@ -64,7 +65,7 @@ const Signup = ({ values, errors, touched }) => {
                 />
 
                 <Button type="submit" className="submit_button" color="primary">Join the team!</Button>{' '}
-                <small>Already have an account? <Link to="/login">Sign in here</Link></small>
+                <small>Already have an account? <Link id="sign_in" to="/login">Sign in here</Link></small>
             </Form>   
         </div>
     </div>

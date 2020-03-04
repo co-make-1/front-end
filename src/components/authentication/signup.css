@@ -33,6 +33,10 @@ justify-content: center;
     padding: 10px;
 }
 
+#sign_in {
+    color: blue;
+}
+
 
 
 .submit_button{
@@ -42,6 +46,10 @@ justify-content: center;
 
 p{
     color: red;
+}
+
+#head{
+    color: #4682B4;
 }
 
 small {
@@ -64,4 +72,5 @@ span:hover {
 #h2 {
         font-size: 30px;
         padding: 5px;
+       color: #4682B4;
 }
