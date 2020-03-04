@@ -1,15 +1,22 @@
 import React from "react"
+import { connect } from "react-redux"
 
 import IssueList from "./IssueList"
 import Profile from "./Profile"
 
-const Dashboard = () => {
+const Dashboard = props => {
     return (
-        <>
-            <Profile />
+        <div>
+            <Profile item={props.profileState} />
             <IssueList />
-        </>
+        </div>
     )
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {
+        profileState: state.userReducer
+    }
+}
+
+export default connect(mapStateToProps, {})(Dashboard);

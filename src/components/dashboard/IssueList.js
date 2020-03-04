@@ -11,7 +11,7 @@ const IssueList = props => {
     return (
         <div className="issue-list-container">
             {props.issueState.map(item => {
-                return (<Issue item={item} />)
+                return (<Issue key={item.id} item={item} />)
             })}
         </div >
     )
