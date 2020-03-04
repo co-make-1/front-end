@@ -9,17 +9,21 @@ const IssueList = props => {
         console.log("Props", props)
     })
     return (
-        <>
+        <div className="issue-list-container">
             {/* Map props to Issue? */}
             <h1>{props.issueId}</h1>
-            <Issue />
-        </>
+            {/* {props.map((item) => {
+                <Issue item={issueId} />
+            })} */}
+        </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
         issueId: state.issueReducer.id,
+        issueTitle: state.issueReducer.title,
+        issueDescription: state.issueReducer.description
     }
 }
 
