@@ -19,7 +19,7 @@ const Nav = () => {
     <h1>Co-Make</h1>
     <div className="nav-link"> 
       
-      <NavLink className="link" key={'001'} to={'/category'}>
+      <NavLink className="link" key={'001'} to={'/home'}>
         <HomeIcon className="link-icon" alt="logo" />
         <div>Home</div>
       </NavLink>

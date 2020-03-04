@@ -85,7 +85,7 @@ html,body{
   cursor: pointer;
 }
 button.logout{
-  color: #4632a8;
+  color: #4682B4;
   padding:10px;
   background-color:wheat;
   height: 45px;
@@ -98,7 +98,7 @@ button.logout :hover{
 }
 
 button.login{
-  color: #4632a8;
+  color: #4682B4;
   padding:10px;
   background-color:wheat;
   height: 45px;
@@ -120,7 +120,7 @@ button.login :hover{
 }
 
 form ::placeholder{
-  color: #2b2838;
+  color: #4682B4;
   padding:5px;
   background-color:white;
   height: 30px;
