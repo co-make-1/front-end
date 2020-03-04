@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route, Link, Redirect } from "react-router-dom"
+import { Route, Switch, Link } from "react-router-dom"
 import './App.css';
 import Nav from './components/authentication/Nav';
 
 // Components
 import Login from "./components/authentication/Login"
 import Signup from "./components/authentication/Signup"
+import PrivateRoute from "./utils/PrivateRoute"
+import Dashboard from "./components/dashboard/Dashboard"
 
 function App() {
   return (

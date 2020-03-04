@@ -1,12 +1,31 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 
-export const getData = () => () => {
+export const FETCH_DATA = "FETCH_DATA";
+export const UPDATE_ISSUE = "UPDATE_ISSUE";
+export const POST_DATA = "POST_DATA";
+
+export const getData = () => dispatch => {
+    dispatch({ type: FETCH_DATA });
     axiosWithAuth()
         .get()
         .then(res => {
-            console.log(".get", res.data)
+            console.log(".get", res.data);
+            dispatch({ type: UPDATE_ISSUE, payload: res.data })
         })
         .catch(err => {
             console.log("Error with .get", err)
+        })
+}
+
+export const postData = value => dispatch => {
+    dispatch({ type: POST_DATA, payload: value })
+    axiosWithAuth()
+        .post()
+        .then(res => {
+            console.log(".post", res)
+            dispatch({ type: UPDATE_ISSUE, payload: res.data })
+        })
+        .catch(err => {
+            console.log("Error with .post", err)
         })
 }
