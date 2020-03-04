@@ -39,6 +39,7 @@ import {axiosWithAuth} from "../../utils/axiosWithAuth";
                             <div className="username">   
                                 
                                 <input
+                                className="input"
                                 type="text"
                                 name="username"
                                 value={login.username}
@@ -49,6 +50,7 @@ import {axiosWithAuth} from "../../utils/axiosWithAuth";
                             <div className="password"> 
                                    
                                     <input
+                                    className="input"
                                     type="password"
                                     name="password"
                                     value={login.password}
@@ -58,7 +60,7 @@ import {axiosWithAuth} from "../../utils/axiosWithAuth";
                             </div>
                                     
                             <div className="log">
-						        <input type="submit" value="Login" className="button"/>
+						        <input className="input" type="submit" value="Login" className="button"/>
 					        </div>
                         </Form>
                     </div>

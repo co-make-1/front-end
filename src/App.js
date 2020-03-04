@@ -12,6 +12,7 @@ import Dashboard from "./components/dashboard/Dashboard"
 function App() {
   return (
     <div className="App">
+
       <h1> Test Render </h1>
       <Nav />
       <Switch>
