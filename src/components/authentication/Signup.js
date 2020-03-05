@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -7,10 +7,18 @@ import "./signup.css";
 import * as Yup from "yup";*/}
 
 
-const Signup = ( {/* { values, errors, touched }*/}) => {
+const Signup = props => {
 
-    const { register, handleSubmit, errors } = useForm();
-    const onSubmit = (data) => console.log(data)
+    const { register, handleSubmit, errors, reset, watch } = useForm();
+
+    const [ member, setMember ] = useState([]);
+
+    const onSubmit = data => { 
+        setMember([...member, data])
+        reset();
+    }
+
+    console.log(member);
     
     
     return (
@@ -33,6 +41,7 @@ const Signup = ( {/* { values, errors, touched }*/}) => {
                {errors.fname && errors.fname.type === "minLength" && (<p>Field requires atleast 6 characters</p>)}
                {errors.fname && errors.fname.type === "maxLength" && (<p>Field requires no more than 12 characters</p>)}
 
+                
 
 
 
@@ -54,7 +63,7 @@ const Signup = ( {/* { values, errors, touched }*/}) => {
                 <label id="gender" htmlFor="gender"/> Gender
                 <select 
                 className="signup_input"
-                ref={register({required: true})}
+                ref={register()}
                 name="gender"
                 >
                     <option value="">Select</option>
@@ -73,7 +82,7 @@ const Signup = ( {/* { values, errors, touched }*/}) => {
                 className="signup_input"
                 />
                {/* {touched.email && errors.email && (<p>{errors.email}</p>)} */}
-               {errors.email && (<p>This is a required field</p>)}
+               {errors.email && (<p>Email is a required field</p>)}
 
 
 
@@ -86,7 +95,7 @@ const Signup = ( {/* { values, errors, touched }*/}) => {
                 className="signup_input"
                 />
               { /* {touched.password && errors.password && (<p>{errors.password}</p>)} */}
-              {errors.password && (<p>This is a required field</p>)}
+              {errors.password && (<p>Password is a required field</p>)}
               {errors.password && errors.password.type === "maxLength" && (<p>Field requires no more than 12 characters</p>)}     
               {errors.password && errors.password.type === "minLength" && (<p>Field requires atleast 6 characters</p>)}                       
 
