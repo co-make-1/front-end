@@ -84,30 +84,23 @@ html,body{
   color: red;
   cursor: pointer;
 }
-button.logout{
+
+button.login {
   color: #4682B4;
   padding:10px;
   background-color:wheat;
   height: 45px;
   width: 150px;
   border-radius: 4px;
-}
-button.logout :hover{
-  color: red;
-  cursor: pointer;
 }
 
-button.login{
+button.logout {
   color: #4682B4;
   padding:10px;
   background-color:wheat;
   height: 45px;
   width: 150px;
   border-radius: 4px;
-}
-button.login :hover{
-  color: red;
-  cursor: pointer;
 }
 
 .log-form{
@@ -154,5 +147,5 @@ input.button{
  
 }
 a{
-  color:wheat;
+  color:#4682B4;
 }
