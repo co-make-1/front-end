@@ -32,13 +32,13 @@ const Signup = props => {
                 <label htmlFor="fname" /> First Name: {" "}
                 <input 
                 className="signup_input"
-                ref={register({required: true, minLength: 6, maxLength: 12})}
+                ref={register({required: true, minLength: 2, maxLength: 12})}
                 type="text"
                 name="fname"
                 placeholder="Enter first name here"
                 />
                {errors.fname && (<p>This is a required field</p>)}
-               {errors.fname && errors.fname.type === "minLength" && (<p>Field requires atleast 6 characters</p>)}
+               {errors.fname && errors.fname.type === "minLength" && (<p>Field requires atleast 2 characters</p>)}
                {errors.fname && errors.fname.type === "maxLength" && (<p>Field requires no more than 12 characters</p>)}
 
                 
@@ -48,13 +48,13 @@ const Signup = props => {
                 <label htmlFor="lname" /> Last Name: {" "}
                 <input 
                 className="signup_input"
-                ref={register({required: true, minLength: 6, maxLength: 12})}
+                ref={register({required: true, minLength: 2, maxLength: 12})}
                 type="text"
                 name="lname"
                 placeholder="Enter last name here"
                 />
                {errors.lname && (<p>This is a required field</p>)}
-               {errors.lname && errors.lname.type === "minLength" && (<p>Field requires atleast 6 characters</p>)}
+               {errors.lname && errors.lname.type === "minLength" && (<p>Field requires atleast 2 characters</p>)}
                {errors.lname && errors.lname.type === "maxLength" && (<p>Field requires no more than 12 characters</p>)}   
 
 
@@ -109,7 +109,7 @@ const Signup = props => {
                 />
 
                 <Button type="submit" className="submit_button" color="primary">Join the team!</Button>{' '}
-                <small>Already have an account? Sign in here</small>
+                <small>Already have an account? <Link id="sign_in" to="/login">Sign in here</Link></small>
             </form>   
         </div>
     </div>
