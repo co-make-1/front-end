@@ -17,6 +17,7 @@ const EditIssue = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        props.history.push("/dashboard")
     }
 
     return (
@@ -44,7 +45,7 @@ const EditIssue = props => {
                 value={props.description}
                 onChange={handleChange}
             />
-            <button>Create</button>
+            <button>Update</button>
         </form>
     )
 }

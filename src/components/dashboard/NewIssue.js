@@ -19,7 +19,7 @@ const NewIssue = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        props.postData({ title: title, description: description });
+        // props.postData({ title: title, description: description });
         props.history.push('/dashboard')
     }
 
@@ -53,10 +53,6 @@ const NewIssue = props => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
 
-    }
-}
 
-export default connect(mapStateToProps, { postData })(NewIssue);
+export default NewIssue;
