@@ -18,10 +18,10 @@ const Profile = props => {
     )
 }
 
-{/* const mapStateToProps = state => {
+/* const mapStateToProps = state => {
     return {
         profileState: state.userReducer
     }
-} */}
+} */
 
 export default Profile;
