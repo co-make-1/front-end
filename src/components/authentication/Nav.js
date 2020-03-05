@@ -26,16 +26,17 @@ const Nav = () => {
 
       <NavLink className="link" key={'002'} to={'/issueList'}>
         <SpeakerNotesIcon className="link-icon" alt="logo" />
-        <div>Issues</div>
+        <div>Dashboard</div>
       </NavLink>
       
       
       <Link to='/login'>
         <button className="login">Login</button>
-        </Link>
-     
-
+      </Link>
+      
+      <Link>
         <button className="logout" onClick={handleLogout}>Logout</button>
+      </Link>
 
        
 

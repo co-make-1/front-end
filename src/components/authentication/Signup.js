@@ -56,16 +56,16 @@ const Signup = ({ values, errors, touched }) => {
                 />
                 {touched.password && errors.password && (<p>{errors.password}</p>)}  
 
-                <label htmlFor="birthday"/> Birthday: {" "}
+                {/* <label htmlFor="birthday"/> Birthday: {" "}
                 <Field
                 id="birthday"
                 name="birthday"
                 type="date"
                 className="signup_input"
-                />
+                /> */}
 
                 <Button type="submit" className="submit_button" color="primary">Join the team!</Button>{' '}
-                <small>Already have an account? <Link id="sign_in" to="/login">Sign in here</Link></small>
+                <small>Already have an account? <Link id="sign_in" to="/login">Login in here</Link></small>
             </Form>   
         </div>
     </div>
