@@ -1,18 +1,18 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
+import { Container, Button } from "semantic-ui-react"
 
 import IssueList from "./IssueList"
 import Profile from "./Profile"
-import NewIssue from "./NewIssue"
 
 const Dashboard = props => {
     return (
-        <div>
+        <Container fluid>
             <Profile item={props.profileState} />
-            <Link to="/new"><button>New Issue</button></Link>
+            <Link to="/new"><Button positive size="large">New Issue</Button></Link>
             <IssueList />
-        </div>
+        </Container>
     )
 }
 
