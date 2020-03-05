@@ -6,20 +6,22 @@ import Issue from "./Issue"
 const IssueList = props => {
 
     useEffect(() => {
-        console.log("Props", props)
+        console.log("IssueList", props)
     })
     return (
-        <>
-            {/* Map props to Issue? */}
-            <h1>{props.issueId}</h1>
-            <Issue />
-        </>
+        <div className="issue-list-container">
+            {props.issueState.map(item => {
+                return (<Issue key={item.id} item={item} />)
+            })}
+        </div >
     )
 }
 
 const mapStateToProps = state => {
     return {
-        issueId: state.issueReducer.id,
+        issueState: state.issueReducer
+        // issueTitle: state.issueReducer.title,
+        // issueDescription: state.issueReducer.description
     }
 }
 

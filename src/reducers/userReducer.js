@@ -1,8 +1,8 @@
 const userState = {
     id: "",
-    name: "",
-    email: "",
-    bio: ""
+    name: "Joe",
+    email: "joe@email.com",
+    bio: "I'm Joe"
     // votes: ""
 }
 

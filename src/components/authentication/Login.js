@@ -1,3 +1,4 @@
+
 // import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom'
 // import { withFormik, Field } from "formik";
@@ -15,6 +16,7 @@ import { Link } from "react-router-dom";
 
 
 const Login = ({ errors, touched }) => {
+
 
     
     return (
@@ -48,10 +50,6 @@ const Login = ({ errors, touched }) => {
        <Button type="submit" className="submit_button" color="primary">Submit!</Button>{' '}
                 <small>Don't have an account? <Link id="sign-up" to="/signup">Join the Team!</Link></small>
        </Form>   
-        </div>
-    </div>
-    )
-}
 
 const FormikLogin = withFormik({
     mapPropsToValues({ name, password }){

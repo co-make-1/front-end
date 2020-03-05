@@ -4,14 +4,23 @@ import { connect } from "react-redux"
 import { postData } from "../../actions"
 
 const NewIssue = props => {
+    const [addIssue, setAddIssue] = useState({
+        id: "",
+        title: "",
+        description: ""
+    })
 
-    // const handleChange = event => {
-
-    // }
+    const handleChange = event => {
+        setAddIssue({
+            ...addIssue,
+            [event.target.name]: event.target.value
+        })
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
-        props.postData({ title: title, description: description })
+        props.postData({ title: title, description: description });
+        props.history.push('/dashboard')
     }
 
     return (
@@ -27,7 +36,7 @@ const NewIssue = props => {
                 name="title"
                 type="text"
                 value={props.title}
-            // onChange={handleChange}
+                onChange={handleChange}
             />
             <label
                 htmlFor="description"
@@ -37,7 +46,7 @@ const NewIssue = props => {
                 name="description"
                 type="text"
                 value={props.description}
-            // onChange={handleChange}
+                onChange={handleChange}
             />
             <button>Create</button>
         </form>
