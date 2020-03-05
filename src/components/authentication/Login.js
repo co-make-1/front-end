@@ -19,7 +19,7 @@ const Login = ({ errors, touched }) => {
 
 
     
-    return (
+return (
 <div className="page_container">
     <h1 className="h1"><span></span></h1>  
         <div id="parent_cont" className="form1_container">
@@ -50,6 +50,7 @@ const Login = ({ errors, touched }) => {
        <Button type="submit" className="submit_button" color="primary">Submit!</Button>{' '}
                 <small>Don't have an account? <Link id="sign-up" to="/signup">Join the Team!</Link></small>
        </Form>   
+       </div></div> )}
 
 const FormikLogin = withFormik({
     mapPropsToValues({ name, password }){
