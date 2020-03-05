@@ -1,8 +1,8 @@
 const userState = {
     id: "",
-    name: "Joe",
+    name: "Joe Smith",
     email: "joe@email.com",
-    bio: "I'm Joe"
+    bio: "I'm just an upstanding citizen of the beautiful Northtown community."
     // votes: ""
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux";
+import { Container } from "semantic-ui-react"
 
 import Issue from "./Issue"
 
@@ -9,11 +10,11 @@ const IssueList = props => {
         console.log("IssueList", props)
     })
     return (
-        <div className="issue-list-container">
+        <Container text>
             {props.issueState.map(item => {
                 return (<Issue key={item.id} item={item} />)
             })}
-        </div >
+        </Container>
     )
 }
 

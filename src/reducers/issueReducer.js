@@ -2,8 +2,8 @@ import { FETCH_DATA, UPDATE_ISSUE } from "../actions"
 
 const issueState = [{
     id: 5,
-    title: "Potholes on my Road",
-    description: "I have to rent a boat to drive down my street!"
+    title: "Potholes on Northview Street?",
+    description: "There are so MANY potholes on northview. I feel like I'm offroading in my honda civic. The city should do something about this!"
 }]
 
 const issueReducer = (state = issueState, action) => {
