@@ -26,7 +26,7 @@ const Signup = props => {
     <h1 className="h1"><span></span></h1>  
         <div id="parent_cont" className="form1_container">
            <form onSubmit={handleSubmit(onSubmit)} className="form">
-                <h2> Join the Team!</h2>
+                <h2><Link id="h2" to="/">Join the Team!</Link></h2>
 
 
                 <label htmlFor="fname" /> First Name: {" "}
