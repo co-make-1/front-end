@@ -1,18 +1,33 @@
 import React from "react"
-
+import {
+    Item,
+    Button,
+    Header,
+    Divider, Grid
+} from "semantic-ui-react"
 import { Link } from "react-router-dom"
 import Vote from "./Vote"
 
 const Issue = props => {
     console.log("Issue", props)
     return (
-        <div>
-            <h3>{props.item.title}</h3>
-            <p>{props.item.description}</p>
-            <Vote />
-            {/* Edit button -> launches EditIssue? */}
-            <Link to="/edit"><button>Edit</button></Link>
-        </div>
+        <Grid>
+            <Grid.Column width={4}>
+                <Vote />
+            </Grid.Column>
+            <Grid.Column width={9}>
+                <Item.Header><Header size="large">{props.item.title}</Header></Item.Header>
+                {/* <Item.Meta>Description of Issue:</Item.Meta> */}
+                <Item.Description>{props.item.description}</Item.Description>
+            </Grid.Column>
+            <Grid.Column width={3}>
+                <Button.Group size="medium" floated="right">
+                    <Link to="/edit"><Button color="teal">Edit</Button></Link>
+                    <Button.Or />
+                    <Button negative>Delete</Button>
+                </Button.Group>
+            </Grid.Column>
+        </Grid>
     )
 }
 
