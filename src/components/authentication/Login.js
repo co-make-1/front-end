@@ -50,7 +50,7 @@ return (
        <Button type="submit" className="submit_button" color="primary">Submit!</Button>{' '}
                 <small>Don't have an account? <Link id="sign-up" to="/signup">Join the Team!</Link></small>
        </Form>   
-       </div></div> )
+       </div></div> )}
 
 const FormikLogin = withFormik({
     mapPropsToValues({ name, password }){
