@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button } from "semantic-ui-react"
+import { Container, Button, Header, Icon } from "semantic-ui-react"
 
 class Vote extends React.Component {
     state = { vote: 0, score: 0 }
@@ -12,13 +12,15 @@ class Vote extends React.Component {
         const { vote, score } = this.state
         return (
             <Container>
-                <Button className={vote === 1 ? "active" : undefined} onClick={() => this.vote(1)}>
-                    Upvote
-                </Button>
-                <p>{score + vote}</p>
-                <Button className={vote === -1 ? "active" : undefined} onClick={() => this.vote(-1)}>
-                    Downvote
-                </Button>
+                <Header sub>{score + vote}</Header>
+                <Button.Group>
+                    <Button icon className={vote === 1 ? "active" : undefined} onClick={() => this.vote(1)}>
+                        <Icon name="arrow up" />
+                    </Button>
+                    <Button icon className={vote === -1 ? "active" : undefined} onClick={() => this.vote(-1)}>
+                        <Icon name="arrow down" />
+                    </Button>
+                </Button.Group>
             </Container>
         )
     }
