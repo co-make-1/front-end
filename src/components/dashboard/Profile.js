@@ -5,8 +5,8 @@ import { Card, Button } from "semantic-ui-react"
 const Profile = props => {
     console.log("Profile", props)
     return (
-        <Card className="main-container">
-            <Card.Meta>User Profile</Card.Meta>
+        <Card className="profile-container">
+            <Card.Description>User Profile</Card.Description>
             {/* 
             Profile image? (stretch)
             Name/Username
@@ -14,7 +14,7 @@ const Profile = props => {
             Bio
             */}
             <Card.Header>{props.item.name}</Card.Header>
-            <Card.Meta>{props.item.email}</Card.Meta>
+            <Card.Description>{props.item.email}</Card.Description>
             <Card.Description>{props.item.bio}</Card.Description>
             <Link><Button color="teal">Edit Profile</Button></Link>
         </Card>

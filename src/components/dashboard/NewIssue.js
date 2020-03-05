@@ -53,7 +53,7 @@ const NewIssue = props => {
                     onChange={handleChange}
                 />
             </Form.Field>
-            <Button>Create</Button>
+            <Button color="teal">Create</Button>
         </Form>
     )
 }
