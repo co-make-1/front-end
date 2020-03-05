@@ -33,10 +33,7 @@ const Nav = () => {
       <Link to='/login'>
         <button className="login">Login</button>
       </Link>
-      
-      <Link>
         <button className="logout" onClick={handleLogout}>Logout</button>
-      </Link>
 
        
 

@@ -13,11 +13,10 @@ import * as Yup from "yup";
 import "./signup.css";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
-const Login = ({ errors, touched }) => {
-
-
+const Login = ({ values, errors, touched }) => {
     
 return (
 <div className="page_container">
@@ -62,13 +61,22 @@ const FormikLogin = withFormik({
 
 
     validationSchema: Yup.object().shape({
-        fname: Yup.string().required("Please enter your name"),
+        name: Yup.string().required("Please enter your name"),
         password: Yup.string().required("password is a required field").min(4),
     }),
 
     handleSubmit (values, {resetForm}) {
-        resetForm()
         console.log(values)
+        axios
+            .post("https://reqres.in/api/login", values)
+            .then(res => {
+                console.log(res);
+                resetForm();
+              })
+              .catch(err => {
+                console.log(err);
+              });
+        resetForm()
     }
 
 
