@@ -106,7 +106,7 @@ const Signup = props => {
                 name="birthday"
                 type="date"
                 className="signup_input"
-                />
+                /> */}
 
                 <Button type="submit" className="submit_button" color="primary">Join the team!</Button>{' '}
                 <small>Already have an account? <Link id="sign_in" to="/login">Sign in here</Link></small>

@@ -34,13 +34,14 @@ justify-content: center;
 }
 
 #sign_in {
-    color: blue;
+    color: #4682B4;
 }
 
 
 
 .submit_button{
     margin-top: 30px;
+    background-color: #4682B4;
 }
 
 
@@ -62,7 +63,7 @@ small {
 }
 
 .page_container{
-    background-color: lightsalmon;
+    background-color: #4682B4;
 }
 
 .h1{
@@ -70,9 +71,6 @@ small {
 
 }
 
-span:hover {
-    color:lightsalmon;
-}
 
 #h2 {
         font-size: 30px;
