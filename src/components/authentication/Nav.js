@@ -18,13 +18,13 @@ const Nav = () => {
     <div className="nav">
       <h1>Co-Make</h1>
       <div className="nav-link">
-
+        {/* 
         <NavLink className="link" key={'001'} to={'/home'}>
           <HomeIcon className="link-icon" alt="logo" />
           <div>Home</div>
-        </NavLink>
+        </NavLink> */}
 
-        <NavLink className="link" key={'002'} to={'/issueList'}>
+        <NavLink className="link" key={'002'} to={'/dashboard'}>
           <SpeakerNotesIcon className="link-icon" alt="logo" />
           <div>Dashboard</div>
         </NavLink>

@@ -8,7 +8,7 @@ const NewIssue = props => {
     const [addIssue, setAddIssue] = useState({
         id: "",
         title: "",
-        description: ""
+        desc: ""
     })
 
     const handleChange = event => {
@@ -49,7 +49,7 @@ const NewIssue = props => {
                     id="description"
                     name="description"
                     type="text"
-                    value={props.description}
+                    value={props.desc}
                     onChange={handleChange}
                 />
             </Form.Field>

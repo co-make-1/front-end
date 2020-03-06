@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 import { Container } from "semantic-ui-react"
 
 import Issue from "./Issue"
+import { axiosWithAuth } from "../../utils/axiosWithAuth"
 
 const IssueList = props => {
+    console.log("IssueList", props)
 
-    useEffect(() => {
-        console.log("IssueList", props)
-    })
+
     return (
         <Container text>
+            <h2>Current Issues</h2>
             {props.issueState.map(item => {
                 return (<Issue key={item.id} item={item} />)
             })}
