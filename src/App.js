@@ -3,11 +3,13 @@ import { Route, Switch, Link } from "react-router-dom"
 import './App.css';
 import Nav from './components/authentication/Nav';
 
-// Components
+// Components //Login2 - reacthookform, Login3 - formik, Login - initial
 import Login from "./components/authentication/Login"
 import Signup from "./components/authentication/Signup"
 import PrivateRoute from "./utils/PrivateRoute"
 import Dashboard from "./components/dashboard/Dashboard"
+import Login2 from "./components/authentication/Login2"
+import Login3 from "./components/authentication/Login3"
 import NewIssue from "./components/dashboard/NewIssue"
 import EditIssue from "./components/dashboard/EditIssue"
 
