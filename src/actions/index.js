@@ -7,7 +7,7 @@ export const POST_DATA = "POST_DATA";
 export const getData = () => dispatch => {
     dispatch({ type: FETCH_DATA });
     axiosWithAuth()
-        .get()
+        .get("posts")
         .then(res => {
             console.log(".get", res.data);
             dispatch({ type: UPDATE_ISSUE, payload: res.data })
@@ -20,7 +20,7 @@ export const getData = () => dispatch => {
 export const postData = value => dispatch => {
     dispatch({ type: POST_DATA, payload: value })
     axiosWithAuth()
-        .post()
+        .post("")
         .then(res => {
             console.log(".post", res)
             dispatch({ type: UPDATE_ISSUE, payload: res.data })

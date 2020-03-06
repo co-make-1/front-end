@@ -1,12 +1,16 @@
 import React, { useState } from "react"
 import { Button, Form } from "semantic-ui-react"
+import { connect } from "react-redux"
+import { getData, postData } from "../../actions"
+
+
 
 const EditIssue = props => {
+    console.log("EditIssue", props)
     const [editIssue, setEditIssue] = useState({
         id: 0,
-        name: "",
-        email: "",
-        bio: ""
+        title: "",
+        desc: ""
     })
 
     const handleChange = event => {
@@ -55,4 +59,10 @@ const EditIssue = props => {
     )
 }
 
-export default EditIssue;
+const mapStateToProps = state => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, { getData, postData })(EditIssue);
