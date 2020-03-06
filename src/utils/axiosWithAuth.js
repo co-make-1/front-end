@@ -1,9 +1,11 @@
-import React from "react"
 import axios from "axios"
 
 export const axiosWithAuth = () => {
-    return (
-        <>
-        </>
-    )
+    const token = window.localStorage.getItem("token");
+    return axios.create({
+        headers: {
+            authorization: token
+        },
+        baseURL: "https://comake2.herokuapp.com/api/"
+    })
 }

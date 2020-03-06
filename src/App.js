@@ -8,8 +8,6 @@ import Login from "./components/authentication/Login"
 import Signup from "./components/authentication/Signup"
 import PrivateRoute from "./utils/PrivateRoute"
 import Dashboard from "./components/dashboard/Dashboard"
-import Login2 from "./components/authentication/Login2"
-import Login3 from "./components/authentication/Login3"
 import NewIssue from "./components/dashboard/NewIssue"
 import EditIssue from "./components/dashboard/EditIssue"
 

@@ -1,85 +1,72 @@
-
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom'
-// import { withFormik, Field } from "formik";
-// import * as Yup from "yup";
-// import "./login.css";
-// import { Form, Message } from 'semantic-ui-react';
-// import {axiosWithAuth} from "../../utils/axiosWithAuth";
-
-import React from "react";
-import { withFormik, Form, Field } from "formik";
-import * as Yup from "yup";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import "./signup.css";
+import axios from 'axios';
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
+export default function Login(props) {
+  const { register, handleSubmit, errors } = useForm();
+  const [member, setMember] = useState({
+    username: "",
+    password: ""
+  })
 
-const Login = ({ values, errors, touched }) => {
-    
-return (
-<div className="page_container">
-    <h1 className="h1"><span></span></h1>  
-        <div id="parent_cont" className="form1_container">
-           <Form className="form">
-                <h2> <Link id="head" to="/">Login!</Link></h2>
+  const onSubmit = (data, e) => {
+    console.log("data", data);
+    axios
+      .post("https://comake2.herokuapp.com/api/auth/login", member)
+      .then(res => {
+        console.log("res", res);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("ID", res.data.userID);
+        props.history.push("/dashboard")
+        window.location.reload(false)
+      })
+      .catch(err => {
+        console.log("err", err);
+      })
+  }
+  // console.log(errors);
 
-                <label htmlFor="name" /> Name: {" "}
-                <Field 
-                className="signup_input"
-                id="name"
-                type="text"
-                name="fname"
-                placeholder="Enter name here"
-                />
-                {touched.fname && errors.fname && (<p>{errors.fname}</p>)}
+  const handleChanges = e => {
+    setMember({
+      ...member,
+      [e.target.name]: e.target.value
+    })
+  }
 
-                <label htmlFor="password" /> Password: {" "}
-                <Field 
-                id="password"
-                type="password"
-                name="password"
-                placeholder="Enter password here"
-                className="signup_input"
-                />
-                {touched.password && errors.password && (<p>{errors.password}</p>)}  
+  return (
+    <div className="page_container">
+      <div id="parent_cont" className="form1_container">
+        <form className="form" onSubmit={handleSubmit(onSubmit)}>
+          <h2> <Link id="head" to="/">Login!</Link></h2>
 
-                
-       <Button type="submit" className="submit_button" color="primary">Submit!</Button>{' '}
-                <small>Don't have an account? <Link id="sign-up" to="/signup">Join the Team!</Link></small>
-       </Form>   
-       </div></div> )}
+          <label>Username</label>
+          <input
+            className="signup_input"
+            type="text"
+            placeholder="Username"
+            name="username"
+            value={member.username}
+            onChange={handleChanges}
+            ref={register({ required: true })} />
+          {errors.username && <p>Username required</p>}
 
-const FormikLogin = withFormik({
-    mapPropsToValues({ name, password }){
-       return {
-        
-        name: name || "",
-        password: password || "",
-    }},
+          <label>Password</label>
+          <input
+            className="signup_input"
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={member.password}
+            onChange={handleChanges}
+            ref={register({ required: true, minLength: 4 })} />
+          {errors.password && <p>Password required and should be at least 4 characters</p>}
 
-
-    validationSchema: Yup.object().shape({
-        name: Yup.string().required("Please enter your name"),
-        password: Yup.string().required("password is a required field").min(4),
-    }),
-
-    handleSubmit (values, {resetForm}) {
-        console.log(values)
-        axios
-            .post("https://reqres.in/api/login", values)
-            .then(res => {
-                console.log(res);
-                resetForm();
-              })
-              .catch(err => {
-                console.log(err);
-              });
-        resetForm()
-    }
-
-
-})(Login);
-
-export default FormikLogin;
+          <Button className="submit_button" color="primary" type="submit">Submit</Button>
+          <small>Don't have an account? <Link id="sign-up" to="/signup">Join the Team!</Link></small>
+        </form>
+      </div></div>
+  )
+}
